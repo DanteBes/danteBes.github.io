@@ -1,0 +1,26 @@
+.header {
+  background: rgb(184, 0, 254);
+  background: linear-gradient(
+    350deg,
+    rgba(235, 0, 253, 1) 0%,
+    rgba(184, 0, 254, 1) 100%
+  );
+  padding: 1.3lh 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3lh;
+}
+
+.header__titleLink {
+  text-decoration: none;
+}
+
+.title {
+  font-size: 1.5em;
+  color: white;
+}
+
+.header__subtitle {
+  font-size: 1.2em;
+  color: var(--theme-clr-3);
+}

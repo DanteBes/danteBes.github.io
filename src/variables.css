@@ -1,0 +1,10 @@
+:root {
+  --bg-clr: #fff;
+  --accent-clr: #000;
+
+  --theme-clr-1: #b800fe;
+  --theme-clr-2: #eb00fd;
+  --theme-clr-3: #fffaf8;
+
+  --main-font: Inter;
+}
