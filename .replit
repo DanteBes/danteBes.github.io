@@ -1,0 +1,44 @@
+run = "replkit dev"
+entrypoint = "src/App.jsx"
+
+hidden = [".config", ".git", ".gitignore"]
+modules = ["nodejs-18"]
+
+[nix]
+channel = "stable-24_05"
+
+[env]
+PATH = "/home/runner/$REPL_SLUG/.config/npm/node_global/bin:/home/runner/$REPL_SLUG/node_modules/.bin"
+XDG_CONFIG_HOME = "/home/runner/.config"
+npm_config_prefix = "/home/runner/$REPL_SLUG/.config/npm/node_global"
+
+[gitHubImport]
+requiredFiles = [".replit", "replit.nix", ".config"]
+
+[packager]
+language = "nodejs"
+
+  [packager.features]
+  packageSearch = true
+  guessImports = true
+  enabledForHosting = false
+
+[languages.javascript]
+pattern = "**/{*.js,*.jsx,*.ts,*.tsx}"
+
+  [languages.javascript.languageServer]
+start = "typescript-language-server --stdio"
+
+[extension]
+isExtension = true
+buildCommand = "replkit build"
+outputDirectory = "./dist"
+staticDirectory = "./public"
+
+[[ports]]
+localPort = 4000
+externalPort = 3000
+
+[[ports]]
+localPort = 8080
+externalPort = 80
