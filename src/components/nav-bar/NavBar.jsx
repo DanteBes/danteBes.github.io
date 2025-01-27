@@ -1,54 +1,54 @@
+import styles from './NavBar.module.css';
+
 function NavBar() {
   return (
-    <nav className="menu">
-      <ul className="menu__list">
-        <li className="menu__item">
-          <a className="menu__item-link" href="#about">
-            <span> Обо мне </span>
+    <nav className={styles.menu}>
+      <ul className={styles.menuList}>
+        <li>
+          <a className={styles.menuItemLink} href="#about">
+            <span>Обо мне</span>
           </a>
         </li>
-        <li className="menu__item">
-          <a className="menu__item-link" href="#projects">
-            <span className="menu__item-text"> Проекты </span>
+        <li>
+          <a className={styles.menuItemLink} href="#projects">
+            <span>Проекты</span>
           </a>
         </li>
-        <li className="menu__item">
-          <a className="menu__item-link" href="#interests">
-            <span className="menu__item-text"> Интересы </span>
+        <li>
+          <a className={styles.menuItemLink} href="#interests">
+            <span>Интересы</span>
           </a>
         </li>
-        <li className="menu__item">
-          <a className="menu__item-link" href="#blog">
-            <span className="menu__item-text"> Блог </span>
+        <li>
+          <a className={styles.menuItemLink} href="#blog">
+            <span>Блог</span>
           </a>
         </li>
-        <li className="menu__item">
-          <details className="menu__details">
-            <summary className="menu__details-summary">
-              <span className="menu__details-summary-text">Контакты</span>
+        <li>
+          <details className={styles.menuDetails}>
+            <summary className={styles.menuDetailsSummary}>
+              <span>Контакты</span>
             </summary>
-            <ul className="menu__details-list">
-              <li className="menu__details-item">
+            <ul className={styles.menuDetailsList}>
+              <li>
                 <a
-                  className="menu__details-item-link"
+                  className={styles.menuItemLink}
                   href="https://vk.com/besfalin_yt"
                 >
-                  <span className="menu__details-item-text"> Профиль в ВК</span>
+                  <span>Профиль в ВК</span>
                 </a>
               </li>
-              <li className="menu__details-item">
+              <li>
                 <a
-                  className="menu__details-item-link"
-                  href="youtube.com/@DanteBesfalin"
+                  className={styles.menuItemLink}
+                  href="https://youtube.com/@DanteBesfalin"
                 >
-                  <span className="menu__details-item-text">YouTube-канал</span>
+                  <span>YouTube-канал</span>
                 </a>
               </li>
-              <li className="menu__details-item">
-                <a className="menu__details-item-link" href="https://tg.com">
-                  <span className="menu__details-item-text">
-                    Телеграмм-канал
-                  </span>
+              <li>
+                <a className={styles.menuItemLink} href="https://tg.com">
+                  <span>Телеграмм-канал</span>
                 </a>
               </li>
             </ul>

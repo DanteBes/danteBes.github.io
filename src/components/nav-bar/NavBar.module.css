@@ -1,0 +1,41 @@
+.menu {
+  padding: 0;
+}
+
+.menuList {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.menuItemLink {
+  display: flex;
+  padding: 1.2em 1em;
+  text-wrap: nowrap;
+}
+
+.menuDetails {
+  padding: 1.2em 1em;
+  text-wrap: nowrap;
+  position: relative;
+  text-decoration: underline;
+}
+
+.menuDetailsSummary:hover {
+  text-decoration: underline;
+}
+
+.menuDetailsList {
+  position: absolute;
+  top: 2.8lh;
+  right: 0;
+  width: max-content;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border: 2px solid var(--theme-clr-1);
+  border-radius: 0.5em;
+  background-color: var(--theme-clr-3);
+}
