@@ -1,10 +1,16 @@
-import styles from './NavBar.module.css';
+import { useState } from "react";
+import styles from "./VerticalNavBar.module.css";
+import burger from '../../assets/images/list.svg'
 
-function NavBar() {
+export function VerticalNavBar() {
+  const [ isOpen, setOpen ] = useState(false);
 
-  
-  
   return (
+    <>
+    <img className={styles.burger} src={burger} onClick={() => setOpen(true)}></img>
+    <div className={styles.right_side} onClick={() => setOpen(false)}></div>
+      
+    {isOpen &&
     <nav className={styles.menu}>
       <ul className={styles.menuList}>
         <li>
@@ -59,7 +65,7 @@ function NavBar() {
         </li>
       </ul>
     </nav>
+    }
+      </>
   );
 }
-
-export default NavBar;

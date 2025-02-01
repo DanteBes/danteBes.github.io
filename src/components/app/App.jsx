@@ -3,18 +3,18 @@ import MainPage from "../../pages/main-page/MainPage";
 import AppHeader from "../app-header/AppHeader";
 import style from "./App.module.css";
 import { Route, Routes } from "react-router-dom";
-import NavBar from "../nav-bar/NavBar";
+import { Bar } from "../bar/Bar";
 
 function App() {
   return (
     <div className={style.root}>
       <AppHeader />
+      <Bar />
       <Routes>
         <Route
           path="/"
           element={
             <>
-              <NavBar />
               <MainPage />
             </>
           }
