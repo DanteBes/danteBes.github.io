@@ -1,11 +1,41 @@
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import styles from "./MainPage.module.css";
 import avatar from "../../assets/images/avatar.jpeg";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { getLatestPost } from "../../utils/blogUtils";
 
 function MainPage() {
+  const [latestPost, setLatestPost] = useState(null);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    const loadLatestPost = async () => {
+      try {
+        const post = await getLatestPost();
+        setLatestPost(post);
+      } catch (error) {
+        console.error('Ошибка загрузки последнего поста:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadLatestPost();
+  }, []);
+
+  // Обработка скролла к якорю при загрузке страницы
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   }, []);
 
   return (
@@ -43,6 +73,36 @@ function MainPage() {
           </p>
         </div>
       </section>
+      <section className={`${styles.section} ${styles.blog}`} id="blog">
+        <h2 className={styles.section__title}>Блог</h2>
+        {loading ? (
+          <p className={styles.section__text}>Загрузка...</p>
+        ) : latestPost ? (
+          <ul className={styles.blogs_list}>
+            <li className={styles.blogs_item}>
+              <article className={styles.post}>
+                <Link
+                  to={`/blogs/${latestPost.slug}`}
+                  className={styles.post__sender}
+                >
+                  {latestPost.title}
+                </Link>
+                <div className={styles.post__button}>
+                  <Link
+                    to="/blogs"
+                    className={styles.post__button_link}
+                  >
+                    Читать далее
+                    <span className={styles.post__button_icon}>&gt;</span>
+                  </Link>
+                </div>
+              </article>
+            </li>
+          </ul>
+        ) : (
+          <p className={styles.section__text}>Пока нет постов в блоге.</p>
+        )}
+      </section>
       <section className={`${styles.section} ${styles.projects}`} id="projects">
         <h2 className={styles.section__title}>Проекты</h2>
         <p className={styles.section__text}>Скоро...</p>
@@ -53,42 +113,6 @@ function MainPage() {
       >
         <h2 className={styles.section__title}>Интересы</h2>
         <p className={styles.section__text}>Скоро...</p>
-      </section>
-      <section className={`${styles.section} ${styles.blog}`} id="blog">
-        <h2 className={styles.section__title}>Блог</h2>
-        <ul className={styles.blogs_list}>
-          <li className={styles.blogs_item}>
-            <article className={styles.post}>
-              <span className={styles.post__sender}>
-                Dante Besfalin | Мобильный gaming и многое другое
-              </span>
-              <div className={styles.post__content}>
-                <div className={styles.post__text}>
-                  <div className={styles.post__quote}>
-                    <span className={styles.post__quote_text}>
-                      Дополнение к опросу
-                    </span>
-                  </div>
-                  Я хочу сделать максимально разнообразный контент, чтобы канал
-                  сильно отличался от сообщества в ВКонтакте, чтобы каждому было
-                  интересно. Вон, даже мембота купил
-                </div>
-              </div>
-              <div className={styles.post__date}>11:49</div>
-              <div className={styles.post__button}>
-                <a
-                  href="https://t.me/dantebesfalin"
-                  className={styles.post__button_link}
-                  target="_blank"
-                >
-                  Комментировать
-                  <span className={styles.post__button_icon}>&gt;</span>
-                </a>
-              </div>
-            </article>
-          </li>
-        </ul>
-        <p className={styles.section__text}></p>
       </section>
     </main>
   );

@@ -12,6 +12,14 @@
   display: flex;
   padding: 1.2em 1em;
   text-wrap: nowrap;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.menuItemLink:hover {
+  color: var(--theme-clr-1);
+  text-decoration: underline;
 }
 
 .menuDetails {

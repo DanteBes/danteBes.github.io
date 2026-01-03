@@ -11,7 +11,7 @@
   position: fixed;
   inset: 0;
   left: 50%;
-  background-color: transform;
+  background-color: transparent;
 }
 
 .menuList {
@@ -25,6 +25,14 @@
   display: flex;
   padding: 1.2em 1em;
   text-wrap: nowrap;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.menuItemLink:hover {
+  color: var(--theme-clr-1);
+  text-decoration: underline;
 }
 
 .menuDetails {
@@ -55,7 +63,7 @@
 
 .burger {
   height: 3.5rem;
-	margin-top: 1rem;
+  margin-top: 1rem;
   margin-left: 1rem;
 }
 /*анимку сложно сделать? */

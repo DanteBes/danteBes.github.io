@@ -3,13 +3,19 @@ import { useEffect, useState } from "react";
 import { VerticalNavBar } from "../vertical-nav-bar/VerticalNavBar";
 
 export function Bar() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 510);
 
   useEffect(() => {
-    console.log(window.innerWidth);
-  }, [window.innerWidth]);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 510);
+    };
 
-  if (window.innerWidth <= 510) {
-    return <VerticalNavBar/>;
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  if (isMobile) {
+    return <VerticalNavBar />;
   } else {
     return <NavBar />;
   }
