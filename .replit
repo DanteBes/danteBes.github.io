@@ -40,6 +40,10 @@ localPort = 4000
 externalPort = 3000
 
 [[ports]]
+localPort = 4001
+externalPort = 3001
+
+[[ports]]
 localPort = 8080
 externalPort = 80
 
@@ -54,3 +58,6 @@ author = 9473552
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "npm run dev"
+
+[agent]
+expertMode = true
