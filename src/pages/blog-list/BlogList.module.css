@@ -37,7 +37,7 @@
   padding: 1em 1.2em;
   text-decoration: none;
   color: var(--accent-clr);
-  background-color: var(--bg-clr);
+  background-color: color-mix(in srgb, var(--theme-clr-2) 5%, var(--bg-clr));
   border: 2px solid var(--theme-clr-2);
   border-radius: 0.8em;
   transition: all 0.3s ease;

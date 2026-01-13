@@ -47,3 +47,7 @@
   border-radius: 0.5em;
   background-color: var(--theme-clr-3);
 }
+
+[data-theme="dark"] .menuDetailsList .menuItemLink {
+  color: #000;
+}

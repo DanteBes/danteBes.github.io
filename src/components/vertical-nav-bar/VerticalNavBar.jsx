@@ -48,7 +48,12 @@ export function VerticalNavBar() {
   return (
     <>
     <img className={styles.burger} src={burger} onClick={() => setOpen(true)} alt="Меню"></img>
-    <div className={styles.right_side} onClick={() => setOpen(false)}></div>
+    {isOpen && (
+      <>
+        <div className={styles.right_side} onClick={() => setOpen(false)}></div>
+        <div className={styles.backdrop} onClick={() => setOpen(false)}></div>
+      </>
+    )}
       
     {isOpen &&
     <nav className={styles.menu}>

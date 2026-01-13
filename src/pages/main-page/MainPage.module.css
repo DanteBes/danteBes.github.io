@@ -66,6 +66,7 @@
 
 .projects {
   border: 2px solid var(--theme-clr-2);
+  background-color: color-mix(in srgb, var(--theme-clr-2) 5%, var(--bg-clr));
 }
 
 .interests {
@@ -77,7 +78,7 @@
 .blog {
   border: 2px solid var(--theme-clr-2);
   background-color: var(--theme-clr-3);
-  background-color: color-mix(in srgb, var(--theme-clr-2) 7%, var(--bg-clr));
+  background-color: color-mix(in srgb, var(--theme-clr-2) 12%, var(--bg-clr));
 }
 
 .blogs_list {
@@ -92,7 +93,7 @@
 }
 
 .post {
-  background-color: var(--bg-clr);
+  background-color: color-mix(in srgb, var(--theme-clr-2) 5%, var(--bg-clr));
   font-size: 0.9em;
   padding: 0.2em 0;
   display: flex;

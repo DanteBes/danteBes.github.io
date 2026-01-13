@@ -2,9 +2,18 @@
   --bg-clr: #fff;
   --accent-clr: #000;
 
-  --theme-clr-1: #b800fe;
+  --theme-clr-1: #6e0099;
   --theme-clr-2: #eb00fd;
   --theme-clr-3: #fffaf8;
 
   --main-font: Inter;
+}
+
+[data-theme="dark"] {
+  --bg-clr: #1a1a1a;
+  --accent-clr: #e0e0e0;
+
+  --theme-clr-1: #9d4edd;
+  --theme-clr-2: #c77dff;
+  --theme-clr-3: #f5f5f5;
 }

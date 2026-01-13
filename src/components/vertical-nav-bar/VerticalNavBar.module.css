@@ -4,6 +4,17 @@
   inset: 0;
   right: 50%;
   background-color: var(--bg-clr);
+  z-index: 12;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 11;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  will-change: backdrop-filter;
 }
 
 .right_side {
@@ -12,6 +23,7 @@
   inset: 0;
   left: 50%;
   background-color: transparent;
+  z-index: 11;
 }
 
 .menuList {
@@ -61,9 +73,17 @@
   background-color: var(--theme-clr-3);
 }
 
+[data-theme="dark"] .menuDetailsList .menuItemLink {
+  color: #000;
+}
+
 .burger {
   height: 3.5rem;
   margin-top: 1rem;
   margin-left: 1rem;
+  position: relative;
+  z-index: 11;
+  cursor: pointer;
+  touch-action: manipulation;
 }
 /*анимку сложно сделать? */

@@ -5,10 +5,22 @@
     rgba(235, 0, 253, 1) 0%,
     rgba(184, 0, 254, 1) 100%
   );
-  padding: 1.3lh 1em;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 1em;
+  padding-right: 1em;
   display: flex;
   flex-direction: column;
   gap: 0.3lh;
+  position: relative;
+  z-index: 10;
+}
+
+.header__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
 }
 
 .header__titleLink {
