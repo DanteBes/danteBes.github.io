@@ -8,6 +8,25 @@ const __dirname = path.dirname(__filename);
 const sourceDir = path.join(__dirname, "../blog");
 const targetDir = path.join(__dirname, "../public/blog");
 
+// Файлы, которые не нужно удалять из целевой папки
+const protectedFiles = ["blog-list.json", "README.md"];
+
+// Проверяет, является ли файл медиа-файлом или markdown
+function isSyncableFile(file) {
+  const lowerFile = file.toLowerCase();
+  if (lowerFile === "readme.md") return false;
+  
+  return (
+    file.endsWith(".md") ||
+    file.endsWith(".png") ||
+    file.endsWith(".jpg") ||
+    file.endsWith(".jpeg") ||
+    file.endsWith(".gif") ||
+    file.endsWith(".webp") ||
+    file.endsWith(".svg")
+  );
+}
+
 // Создаем целевую папку, если её нет
 if (!fs.existsSync(targetDir)) {
   fs.mkdirSync(targetDir, { recursive: true });
@@ -19,17 +38,37 @@ try {
     console.log("📁 Папка blog/ не найдена, создаю...");
     fs.mkdirSync(sourceDir, { recursive: true });
     console.log("✅ Папка blog/ создана. Добавьте туда ваши MD файлы.");
+    
+    // Если исходной папки нет, удаляем все синхронизируемые файлы из целевой
+    if (fs.existsSync(targetDir)) {
+      const targetFiles = fs.readdirSync(targetDir);
+      let deletedCount = 0;
+      
+      targetFiles.forEach((file) => {
+        if (isSyncableFile(file) && !protectedFiles.includes(file)) {
+          const targetPath = path.join(targetDir, file);
+          fs.unlinkSync(targetPath);
+          deletedCount++;
+          console.log(`🗑️  Удален: ${file}`);
+        }
+      });
+      
+      if (deletedCount > 0) {
+        console.log(`✅ Удалено ${deletedCount} файлов из public/blog/`);
+      }
+    }
+    
     process.exit(0);
   }
 
   // Читаем все файлы из исходной папки
-  const files = fs.readdirSync(sourceDir);
-  const mdFiles = files.filter(
+  const sourceFiles = fs.readdirSync(sourceDir);
+  const mdFiles = sourceFiles.filter(
     (file) => file.endsWith(".md") && file.toLowerCase() !== "readme.md"
   );
   
   // Также копируем изображения и другие медиа-файлы
-  const mediaFiles = files.filter(
+  const mediaFiles = sourceFiles.filter(
     (file) =>
       file.endsWith(".png") ||
       file.endsWith(".jpg") ||
@@ -39,18 +78,14 @@ try {
       file.endsWith(".svg")
   );
 
-  const allFiles = [...mdFiles, ...mediaFiles];
-
-  if (allFiles.length === 0) {
-    console.log("📝 В папке blog/ нет файлов для синхронизации");
-    process.exit(0);
-  }
+  const sourceSyncableFiles = new Set([...mdFiles, ...mediaFiles]);
 
   let copiedCount = 0;
   let updatedCount = 0;
+  let deletedCount = 0;
 
-  // Копируем каждый файл
-  allFiles.forEach((file) => {
+  // Копируем и обновляем файлы из исходной папки
+  sourceSyncableFiles.forEach((file) => {
     const sourcePath = path.join(sourceDir, file);
     const targetPath = path.join(targetDir, file);
 
@@ -76,10 +111,33 @@ try {
     }
   });
 
-  if (copiedCount > 0 || updatedCount > 0) {
-    console.log(
-      `✅ Синхронизация завершена: ${copiedCount} скопировано, ${updatedCount} обновлено`
-    );
+  // Удаляем файлы из целевой папки, которых нет в исходной
+  if (fs.existsSync(targetDir)) {
+    const targetFiles = fs.readdirSync(targetDir);
+    
+    targetFiles.forEach((file) => {
+      // Удаляем только синхронизируемые файлы, которых нет в исходной папке
+      if (
+        isSyncableFile(file) &&
+        !protectedFiles.includes(file) &&
+        !sourceSyncableFiles.has(file)
+      ) {
+        const targetPath = path.join(targetDir, file);
+        fs.unlinkSync(targetPath);
+        deletedCount++;
+        console.log(`🗑️  Удален: ${file}`);
+      }
+    });
+  }
+
+  // Выводим итоговую статистику
+  const changes = [];
+  if (copiedCount > 0) changes.push(`${copiedCount} скопировано`);
+  if (updatedCount > 0) changes.push(`${updatedCount} обновлено`);
+  if (deletedCount > 0) changes.push(`${deletedCount} удалено`);
+
+  if (changes.length > 0) {
+    console.log(`✅ Синхронизация завершена: ${changes.join(", ")}`);
   } else {
     console.log("✅ Все файлы синхронизированы");
   }

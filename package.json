@@ -13,7 +13,7 @@
     "preview": "vite preview",
     "prebuild": "npm run prepare-blog",
     "predeploy": "npm run build",
-    "deploy": "npm run predeploy && gh-pages -d dist"
+    "deploy": "npm run predeploy && gh-pages -d dist -b gh-pages"
   },
   "dependencies": {
     "lucide-react": "^0.562.0",
