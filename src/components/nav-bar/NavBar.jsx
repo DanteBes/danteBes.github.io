@@ -96,7 +96,7 @@ function NavBar() {
                 </a>
               </li>
               <li>
-                <a
+                <a title="у вас откроется ютуб"
                   className={styles.menuItemLink}
                   href="https://youtube.com/@DanteBesfalin"
                 >
