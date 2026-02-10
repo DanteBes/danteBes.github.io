@@ -113,7 +113,7 @@ function NavBar() {
                 <a 
                   title=”Вас перенаправит на сайт t.me”
                   className={styles.menuItemLink} 
-                  href="">
+                  href="https://t.me/dantebesfalin">
                   <span>Телеграмм-канал</span>
                 </a>
               </li>
