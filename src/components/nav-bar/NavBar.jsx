@@ -47,7 +47,7 @@ function NavBar() {
       <ul className={styles.menuList}>
         <li>
           <a 
-            title=”главная карточка сайта”
+            title="главная карточка сайта"
             className={styles.menuItemLink}
             href="#about"
             onClick={(e) => handleAnchorClick(e, "#about")}
@@ -67,7 +67,7 @@ function NavBar() {
         </li>
         <li>
           <a 
-            title=”Вас перенаправит на раздел с интересами”
+            title="Вас перенаправит на раздел с интересами"
             className={styles.menuItemLink}
             href="#interests"
             onClick={(e) => handleAnchorClick(e, "#interests")}
@@ -77,7 +77,7 @@ function NavBar() {
         </li>
         <li>
           <a
-            title=”Вас перенаправит на карточку с блогом”
+            title="Вас перенаправит на карточку с блогом"
             className={styles.menuItemLink}
             href="#blog"
             onClick={(e) => handleAnchorClick(e, "#blog")}
@@ -93,7 +93,7 @@ function NavBar() {
             <ul className={styles.menuDetailsList}>
               <li>
                 <a
-                  title=”Вас перенаправит на сайт vk.com”
+                  title="Вас перенаправит на сайт vk.com"
                   className={styles.menuItemLink}
                   href="https://vk.com/besfalin_yt"
                 >
@@ -111,7 +111,7 @@ function NavBar() {
               </li>
               <li>
                 <a 
-                  title=”Вас перенаправит на сайт t.me”
+                  title="Вас перенаправит на сайт t.me"
                   className={styles.menuItemLink} 
                   href="https://t.me/dantebesfalin">
                   <span>Телеграмм-канал</span>
