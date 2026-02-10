@@ -46,7 +46,8 @@ function NavBar() {
     <nav className={styles.menu}>
       <ul className={styles.menuList}>
         <li>
-          <a
+          <a 
+            title=”главная карточка сайта”
             className={styles.menuItemLink}
             href="#about"
             onClick={(e) => handleAnchorClick(e, "#about")}
@@ -55,7 +56,8 @@ function NavBar() {
           </a>
         </li>
         <li>
-          <a
+          <a 
+            title="Вас перенаправит на раздел с проектами"
             className={styles.menuItemLink}
             href="#projects"
             onClick={(e) => handleAnchorClick(e, "#projects")}
@@ -64,7 +66,8 @@ function NavBar() {
           </a>
         </li>
         <li>
-          <a
+          <a 
+            title=”Вас перенаправит на раздел с интересами”
             className={styles.menuItemLink}
             href="#interests"
             onClick={(e) => handleAnchorClick(e, "#interests")}
@@ -74,6 +77,7 @@ function NavBar() {
         </li>
         <li>
           <a
+            title=”Вас перенаправит на карточку с блогом”
             className={styles.menuItemLink}
             href="#blog"
             onClick={(e) => handleAnchorClick(e, "#blog")}
@@ -89,6 +93,7 @@ function NavBar() {
             <ul className={styles.menuDetailsList}>
               <li>
                 <a
+                  title=”Вас перенаправит на сайт vk.com”
                   className={styles.menuItemLink}
                   href="https://vk.com/besfalin_yt"
                 >
