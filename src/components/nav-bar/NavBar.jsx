@@ -101,7 +101,8 @@ function NavBar() {
                 </a>
               </li>
               <li>
-                <a title="у вас откроется ютуб"
+                <a 
+                  title="Вас перенаправит на сайт yotube.com"
                   className={styles.menuItemLink}
                   href="https://youtube.com/@DanteBesfalin"
                 >
@@ -109,7 +110,10 @@ function NavBar() {
                 </a>
               </li>
               <li>
-                <a className={styles.menuItemLink} href="https://tg.com">
+                <a 
+                  title=”Вас перенаправит на сайт t.me”
+                  className={styles.menuItemLink} 
+                  href="">
                   <span>Телеграмм-канал</span>
                 </a>
               </li>
