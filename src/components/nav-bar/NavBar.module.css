@@ -1,5 +1,7 @@
 .menu {
   padding: 0;
+	position: sticky;
+  top: 0;
 }
 
 .menuList {
@@ -7,6 +9,8 @@
   justify-content: space-around;
   flex-wrap: wrap;
 }
+
+/*так к чему тут добавить position relative а к чемуму stici*/
 
 .menuItemLink {
   display: flex;
@@ -18,7 +22,8 @@
 }
 
 .menuItemLink:hover {
-  color: var(--theme-clr-1);
+  color: var(--bg-clr);
+  background-color: var(--theme-clr-1);
   text-decoration: underline;
 }
 
