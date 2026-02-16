@@ -5,6 +5,7 @@
   --theme-clr-1: #6e0099;
   --theme-clr-2: #eb00fd;
   --theme-clr-3: #fffaf8;
+  --theme-clr-4: hsla(283 100% 30% / 0.66);
 
   --main-font: Inter;
 }
@@ -16,4 +17,6 @@
   --theme-clr-1: #9d4edd;
   --theme-clr-2: #c77dff;
   --theme-clr-3: #f5f5f5;
+	--theme-clr-4: hsla(273 68% 59% / 0.66);
+
 }
