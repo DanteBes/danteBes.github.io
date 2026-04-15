@@ -19,10 +19,11 @@ export default defineConfig({
   ],
   base: "/",
   server: {
-    port: 4000,
+    port: 5173,
     host: true,
     allowedHosts: [  
-      ".replit.dev"
+      ".replit.dev",
+      "dev5173.besfalin.ru"
     ],
   },
 });
