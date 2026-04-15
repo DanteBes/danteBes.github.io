@@ -6,6 +6,7 @@ import AppHeader from "../app-header/AppHeader";
 import style from "./App.module.css";
 import { Route, Routes } from "react-router-dom";
 import { Bar } from "../bar/Bar";
+import { Footer } from "..footer/footer";
 
 function App() {
   return (
