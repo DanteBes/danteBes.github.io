@@ -6,7 +6,7 @@ import AppHeader from "../app-header/AppHeader";
 import style from "./App.module.css";
 import { Route, Routes } from "react-router-dom";
 import { Bar } from "../bar/Bar";
-import { Footer } from "..footer/footer";
+import Footer from "../footer/Footer";
 
 function App() {
   return (
@@ -26,6 +26,7 @@ function App() {
         <Route path="/blogs" element={<BlogList />} />
         <Route path="/blogs/:slug" element={<BlogPost />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
