@@ -1,11 +1,11 @@
-function Footer() {
-  return 
-    <footer classmame="footer">
-        <div classmame="footer_bar_link">
-          <a href="" classmame="footer_bar_link-item footer__bar_link-item--developer  footer__bar_link-item--developer_efect">
+export function Footer() {
+  return (
+    <footer className="footer">
+        <div className="footer_bar_link">
+          <a href="#" className="footer_bar_link-item footer__bar_link-item--developer  footer__bar_link-item--developer_effect">
             Главный разработчик
           </a>
-          <a href="" classmame="footer__bar_link-item  footer__bar_link-item--developer  footer__bar_link-item--developer_efevt">
+          <a href="#" className="footer__bar_link-item  footer__bar_link-item--developer  footer__bar_link-item--developer_effect">
             Самый лучший разработчик
           </a>
         </div>
@@ -15,5 +15,5 @@ function Footer() {
           </span>
         </div>
       </footer>
+  )
 }
-export default Footer;
