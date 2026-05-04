@@ -9,8 +9,8 @@ export function Footer() {
             Самый лучший разработчик
           </a>
         </div>
-        <div>
-          <span>
+        <div className="footer__WaterMark">
+          <span className="footer__WaterMark-text">
             © 2025 Ярослав Бесфалин
           </span>
         </div>
