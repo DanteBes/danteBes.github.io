@@ -1,0 +1,25 @@
+.footer {
+    height: 100%;
+    width: 100%;
+    background-color: var(--theme-clr-4);
+}
+
+.footer__bar_link {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer_bar_link-item {
+
+}
+
+.footer__bar_link-item--developer {
+
+    &._effect:hover {
+
+    }
+}
+
+/*.footer__bar_link-item--developer_effect {
+
+}*/
