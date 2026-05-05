@@ -9,17 +9,24 @@
     flex-direction: row;
 }
 
-.footer_bar_link-item {
+.footer__bar_link-item {
 
 }
 
 .footer__bar_link-item--developer {
-
     &._effect:hover {
 
     }
 }
 
-/*.footer__bar_link-item--developer_effect {
+.footer__bar_link-item--developer_effect {
 
-}*/
+}
+
+.footer__WaterMark {
+
+}
+
+.footer__WaterMark-text {
+
+}
