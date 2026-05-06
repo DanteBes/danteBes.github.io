@@ -1,12 +1,12 @@
 .footer {
-    height: 100%;
-    width: 100%;
+    height: 150px;
+    width: 100vw;
     background-color: var(--theme-clr-4);
 }
 
 .footer__bar_link {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .footer__bar_link-item {
