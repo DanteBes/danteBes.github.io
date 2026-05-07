@@ -6,8 +6,10 @@
 }
 
 .footer__bar_link {
+    height: 60%;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
 }
 
 .footer__bar_link-item {
