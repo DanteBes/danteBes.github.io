@@ -17,6 +17,7 @@
 }
 
 .footer__bar_link-item--developer {
+    color: var(--bg-clr);
     &._effect:hover {
 
     }
