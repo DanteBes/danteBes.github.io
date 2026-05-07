@@ -13,6 +13,7 @@
     "preview": "vite preview",
     "prebuild": "npm run prepare-blog",
     "predeploy": "npm run build",
+    "push": "bun run scripts/push.mjs",
     "deploy": "npm run predeploy && gh-pages -d dist -b gh-pages"
   },
   "dependencies": {
