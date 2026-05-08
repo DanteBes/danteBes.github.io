@@ -2,7 +2,7 @@
   padding: 0;
 	position: sticky;
   top: 0;
-  background-color: var(--theme-clr-4);
+  /*background-color: var(--theme-clr-4);*/
   backdrop-filter: blur(4px);
 }
 
