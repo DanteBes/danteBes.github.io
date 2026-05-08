@@ -16,18 +16,17 @@
 }
 
 .footer__bar_link-item {
-
+    font-size: 0.9rem;
+    padding: 0.5em;
+    border-radius: 0.5em;
 }
 
 .footer__bar_link-item--developer {
     color: var(--bg-clr);
-    &._effect:hover {
-
-    }
 }
 
-.footer__bar_link-item--developer_effect {
-
+.footer__bar_link-item--developer_effect:hover {
+    background-color: var(--theme-clr-1);
 }
 
 .footer__WaterMark {
