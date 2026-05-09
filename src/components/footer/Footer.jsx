@@ -1,5 +1,5 @@
 import styles from "./Footer.module.css";
-
+const year = new Date().getFullYear()
 export function Footer() {
   return (
     <footer className={styles.footer}>
@@ -31,7 +31,7 @@ export function Footer() {
       </div>
       <div className={styles["footer__WaterMark"]}>
         <span className={styles["footer__WaterMark-text"]}>
-          © 2025 Ярослав Бесфалин
+          © 2025 - {year} Ярослав Бесфалин
         </span>
       </div>
     </footer>
