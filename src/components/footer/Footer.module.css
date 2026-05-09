@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    gap: 2rem;
     height: 150px;
     width: 100vw;
     padding: 0.65em 0 0 0.65em;
@@ -16,13 +17,16 @@
 }
 
 .footer__bar_link-item {
+    width: max-content;
     font-size: 0.9rem;
     padding: 0.5em;
     border-radius: 0.5em;
+    transition: 0.3s;
 }
 
 .footer__bar_link-item--developer {
     color: var(--bg-clr);
+    text-decoration: none;
 }
 
 .footer__bar_link-item--developer_effect:hover {
@@ -30,9 +34,12 @@
 }
 
 .footer__WaterMark {
-
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
 }
 
 .footer__WaterMark-text {
-
+    padding: 0 1em;
+    color: var(--theme-clr-4);
 }
