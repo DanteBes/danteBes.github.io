@@ -5,7 +5,8 @@ export function Footer() {
     <footer className={styles.footer}>
       <div className={styles["footer__bar_link"]}>
         <a
-          href="#"
+          title="Вас перенаправит на: github.com"
+          href="https://github.com/DanteBes"
           className={
             styles["footer__bar_link-item"] +
             " " +
@@ -17,7 +18,8 @@ export function Footer() {
           Главный разработчик
         </a>
         <a
-          href="#"
+          title="Вас перенаправит на сайт моего лучшего друга, он меня выручал в трудную минуту. Бро, ты лучший! art0tod.com"
+          href="https://art0tod.com"
           className={
             styles["footer__bar_link-item"] +
             " " +
