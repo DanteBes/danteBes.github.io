@@ -1,5 +1,6 @@
 .footer {
     display: flex;
+    align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     gap: 2rem;
@@ -35,6 +36,7 @@
 }
 
 .footer__WaterMark {
+    width: 100vw;
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
